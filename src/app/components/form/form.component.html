@@ -1,0 +1,46 @@
+<div *ngIf="!isReview">
+    <form [formGroup]="form" (ngSubmit)="submitForm(form.value)">
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" formControlName="date">
+        </div>
+        <div class="form-group">
+            <input type="radio" formControlName="type" name="type" id="auto" value="auto"/>
+            <label for="auto">Auto</label>
+    
+            <input type="radio" formControlName="type" name="type" id="other" value="other"/>
+            <label for="other">Other</label>
+        </div>
+        <div formArrayName="address">
+            <div *ngFor="let item of addressFormArray.controls; let i = index">
+                <div [formGroupName]="i">
+                    <div class="form-group">
+                        <label>Address Line</label>
+                        <input type="text" formControlName="addressLine">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" formControlName="city">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" formControlName="state">
+                    </div>
+                    <div class="form-group">
+                        <label>Zip code</label>
+                        <input type="text" formControlName="zipCode">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <button type="button" (click)="addAddress()" *ngIf="addressFormArray.length < 3">Add address</button>
+</div>
+
+<div class="reviewForm" *ngIf="isReview">
+    {{ formData | json }}
+    <button type="button" (click)="onEdit()">Edit</button>
+</div>
+
+<p>{{lan1}} {{lan2 ? ',' : ''}} {{lan2}}</p>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Pipe example 1: Format phone number</h2>
+    <hr>
+    <p>{{ mobileNumbers?.mobile1 | phoneNumber }}</p>
+    <p>{{ mobileNumbers.mobile2 | phoneNumber }}</p>
+    <p>{{ mobileNumbers.mobile3 | phoneNumber }}</p>
+
+    <h2>Pipe example 2: Masking phone number</h2>
+    <hr>
+    <p>{{ mobileNumbers?.mobile1 | maskingPhone }}</p>
+    <p>{{ mobileNumbers?.mobile2 | maskingPhone }}</p>
+    <p>{{ mobileNumbers?.mobile3 | maskingPhone }}</p>
+
+    <h2>Pipe example 3: Masking mail ID</h2>
+    <hr>
+    <p>{{  emailIds.mail_Id1 | maskingEmail}}</p>
+    <p>{{  emailIds.mail_Id2 | maskingEmail}}</p>
+    <p>{{  emailIds.mail_Id3 | maskingEmail}}</p>
+    <p>{{  emailIds.mail_Id4 | maskingEmail}}</p>
+</div>

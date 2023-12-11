@@ -1,1 +1,35 @@
-<table id="table"></table>
+<!-- <table id="table"></table>
+<input type="text" name="" id="">
+<button type="button" tabindex="1">click</button>
+<input type="checkbox" name="" id="">
+
+
+<form [formGroup]="form">
+
+	<button (click)="addCreds()">Add</button>
+	<div formArrayName="credentials"
+		*ngFor="let creds of form.controls['credentials']?.value; let i = index;">
+		<div [formGroupName]="i" style="display: flex">
+			<select formControlName="action">
+              <option *ngFor="let option of options;" value="{{option.key}}"> {{option.value}} </option>
+            </select>
+			<input placeholder="Name" formControlName="name">
+			<div>
+				<input placeholder="Label" formControlName="label">
+            </div>
+				<div>
+					<button (click)="updateData(i)">Toggle</button>
+          Ptinr{{hideArray[i] | json}} 
+				</div>
+			</div>
+		</div>
+
+</form>
+
+<pre>
+      {{ form?.getRawValue() | json }}
+    </pre> -->
+
+<main>
+	<router-outlet></router-outlet>
+</main>

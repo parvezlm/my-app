@@ -1,0 +1,37 @@
+.pdf {
+    padding: 40px 0;
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 -15px;
+    }
+
+    .col {
+        padding: 0 15px;
+    }
+
+    .head {
+        margin-bottom: 25px;
+    }
+
+    .details {
+        padding: 15px 0;
+        border-bottom: 1px solid gray;
+        border-top: 1px solid gray;
+    }
+
+    .body_pdf {
+        width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        padding: 30px 40px;
+        margin-top: 50px;
+    }
+
+    .top {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}

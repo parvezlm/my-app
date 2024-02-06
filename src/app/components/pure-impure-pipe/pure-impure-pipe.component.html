@@ -1,0 +1,25 @@
+<section class="pure_impur">
+    <div class="container">
+        <div class="form-group">
+            <input type="text" [(ngModel)]="filterText" placeholder="Enter the value...">
+        </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+                <th>Roll no</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+            <tr *ngFor="let student of students | filterStudent: filterText">
+                <td>{{ student.name }}</td>
+                <td>{{ student.marks }}</td>
+                <td>{{ student.rollNo }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.gender }}</td>
+            </tr>
+        </table>
+        <button type="button" (click)="addStudent()">Add student</button>
+        <button type="button" (click)="changeGender()">Change gender</button>
+    </div>
+</section>

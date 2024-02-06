@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,4 +13,45 @@ body {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.form-control {
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.btn {
+    border: 1px solid #373737;
+    background-color: #373737;
+    font-size: 16px;
+    color: #fff;
+    padding: 13px 40px;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    label {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}
+
+hr {
+    margin: 15px 0;
+}
+
+.mainHeading {
+    margin-bottom: 20px;
+}
+
+.add_more_btn {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    font-size: 14px;
+    color: #2020cb;
 }

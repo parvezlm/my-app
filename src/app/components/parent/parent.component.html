@@ -1,0 +1,19 @@
+<section class="parent">
+    <div class="container">
+        <div class="form-group">
+            <input type="text" placeholder="Enter here..." class="form-control" #value />
+        </div>
+        <button type="button" class="btn" (click)="parentToChild(value)">Submit</button>
+        <app-child [data]="item" *ngIf="isComponentVisible">Comes from parent: {{item}}</app-child>
+        <br />
+        <button type="button" class="btn" (click)="destroy()">Destroy component</button>
+        <hr>
+        <!-- @ContentChild -->
+        <h2 class="mainHeading">@ContentChild Decorator</h2>
+        <app-content-child>
+            <h3 #header>Projected data from parent</h3>
+            <p><strong>Projected data:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, expedita!</p>
+        </app-content-child>
+
+    </div>
+</section>

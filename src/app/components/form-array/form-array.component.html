@@ -1,0 +1,75 @@
+<section class="formArray">
+  <div class="container">
+    <h3>Present Address</h3>
+    <hr />
+    <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+      <div class="form-group">
+        <label>Address Line 1</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Address line 1"
+          formControlName="addressLine1"
+        />
+      </div>
+      <div class="form-group">
+        <label>Address Line 2</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Address line 2"
+          formControlName="addressLine2"
+        />
+      </div>
+      <div formArrayName="addressLines">
+        <div *ngFor="let item of addressFormArray.controls; let i = index">
+          <div class="form-group" [formGroupName]="i">
+            <label>AddressLine {{ i + 3 }}</label>
+            <input type="text" class="form-control" formControlName="addressLine" placeholder="Address line {{i + 3}}" />
+            <button type="button" class="remove" (click)="remove(i)">X</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="addAddressLine()">Add more</button>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="City"
+          formControlName="city"
+        />
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="State"
+          formControlName="state"
+        />
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <select class="form-control" formControlName="country">
+          <option>Select Country</option>
+          <option *ngFor="let country of countries" value="{{ country }}">
+            {{ country }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Zipcode</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Zipcode"
+          formControlName="zipcode"
+        />
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</section>

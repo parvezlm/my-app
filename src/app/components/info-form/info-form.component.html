@@ -1,0 +1,30 @@
+<section class="infoForm">
+    <div class="container">
+        <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="number" class="form-control" formControlName="mobile">
+            </div>
+            <div formArrayName="mobiles">
+                <div *ngFor="let item of phoneArray.controls; let i = index">
+                    <div [formGroupName]="i" class="form-group">
+                        <label>Phone</label>
+                        <input type="number" class="form-control" formControlName="mobile">
+                    </div>
+                </div>
+            </div>
+            <div class="form-gruop">
+                <button type="button" (click)="addPhone()" *ngIf="phone.length !== 1">Add more phone</button>
+            </div>
+         <button type="submit">submit</button>
+        </form>
+    </div>
+</section>

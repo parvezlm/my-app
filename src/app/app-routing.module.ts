@@ -8,6 +8,11 @@ import { ParentComponent } from './components/parent/parent.component';
 import { FormArrayComponent } from './components/form-array/form-array.component';
 import { InfoFormComponent } from './components/info-form/info-form.component';
 import { RegistraionFormComponent } from './components/registration-form/registration-form.component';
+import { SwitchmapComponent } from './components/rxjs/switchmap/swithcmap.component';
+import { ResgisterFormComponents } from './components/form-example/resgistration-form.component';
+import { CanActivateGuard } from './auth-guard/canactivate.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: 'form', component: FormComponent },
@@ -17,7 +22,11 @@ const routes: Routes = [
   { path: 'parent', component: ParentComponent },
   { path: 'form-array', component: FormArrayComponent },
   { path: 'info-form', component: InfoFormComponent },
-  { path: 'registration-form', component: RegistraionFormComponent }
+  { path: 'registration-form', component: RegistraionFormComponent },
+  { path: 'switchmap', component: SwitchmapComponent },
+  { path: 'form-array-example', component: ResgisterFormComponents, canActivate: [CanActivateGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

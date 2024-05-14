@@ -1,15 +1,27 @@
 .regs_form {
-    padding: 60px 0;
-    form {
-        width: 500px;
-    }
+  padding: 60px 0;
+  form {
+    width: 500px;
+  }
 
-    .address input:not(:last-child) {
-        margin-bottom: 15px;
-    }
+  .address input:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  label {
+    position: relative;
+  }
+
+  .remove {
+    bottom: -2px;
+    right: -36px;
+  }
 }
 
 .custome_radio label {
-    margin: 0 10px;
+  margin: 0 10px;
+}
 
+.formData {
+ margin-top: 20px;
 }

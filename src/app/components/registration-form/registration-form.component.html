@@ -33,7 +33,7 @@
             <div class="form-group address" formArrayName="address">
                <div *ngFor="let item of getControls(); let i = index">
                    <div [formGroupName]="i" class="form-group">
-                        <label>Address</label>
+                        <label>Address  <button type="button" *ngIf="i > 0" class="remove" (click)="removeForm(i)">X</button></label>
                         <input type="text" class="form-control" placeholder="Street" formControlName="street" />
                         <input type="text" class="form-control" placeholder="State" formControlName="state" />
                         <input type="text" class="form-control" placeholder="Zipcode" formControlName="zipcode" /> 
@@ -43,5 +43,8 @@
             <button type="button" class="add_more_btn" (click)="addAddress()" *ngIf="getControls().length !== 2">Add more address</button>
             <button type="submit" class="btn">Submit</button>
         </form>
+        <div class="formData">
+            <p>{{ formData | json }}</p>
+        </div>
     </div>
 </section>

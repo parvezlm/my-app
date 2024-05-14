@@ -78,6 +78,5 @@ export class AppComponent implements OnInit, AfterViewInit {
       `;
       document.getElementById(id)?.appendChild(tr);
     }
-
   }
 }

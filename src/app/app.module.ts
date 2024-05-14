@@ -18,6 +18,16 @@ import { ContentchildComponent } from './components/content-child-decorator/cont
 import { FormArrayComponent } from './components/form-array/form-array.component';
 import { InfoFormComponent } from './components/info-form/info-form.component';
 import { RegistraionFormComponent } from './components/registration-form/registration-form.component';
+import { SwitchmapComponent } from './components/rxjs/switchmap/swithcmap.component';
+import { ResgisterFormComponents } from './components/form-example/resgistration-form.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './utils/http-interceptor';
+import { FormatPhonePipe } from './utils/format-phone.pipe';
+import { CanActivateGuard } from './auth-guard/canactivate.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { CamelCasePipe } from './pipes/camel-case.pipe';
+import { CapitalAlterNateLetterPipe } from './pipes/capital-alternate-letter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,15 +45,30 @@ import { RegistraionFormComponent } from './components/registration-form/registr
     ContentchildComponent,
     FormArrayComponent,
     InfoFormComponent,
-    RegistraionFormComponent
+    RegistraionFormComponent,
+    SwitchmapComponent,
+    ResgisterFormComponents,
+    FormatPhonePipe,
+    NotFoundComponent,
+    LoginComponent,
+    CamelCasePipe,
+    CapitalAlterNateLetterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    CanActivateGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

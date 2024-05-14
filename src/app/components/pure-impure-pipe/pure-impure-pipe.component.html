@@ -1,7 +1,9 @@
 <section class="pure_impur">
     <div class="container">
         <div class="form-group">
-            <input type="text" [(ngModel)]="filterText" placeholder="Enter the value...">
+            <form #searchForm="ngForm">
+                <input type="text" [(ngModel)]="filterText" placeholder="Enter the value..." ngModel name="item" />
+            </form>
         </div>
         <table>
             <tr>

@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
     name: 'filterStudent',
-    // pure: false
+    pure: true
 })
 export class FilterPipe implements PipeTransform {
     transform(students: Array<any>, filterText: string) {

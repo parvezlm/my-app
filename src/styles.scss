@@ -31,6 +31,8 @@ body {
 
 .form-group {
     margin-bottom: 15px;
+    position: relative;
+
     label {
         margin-bottom: 5px;
         display: inline-block;
@@ -54,4 +56,22 @@ hr {
     cursor: pointer;
     font-size: 14px;
     color: #2020cb;
+}
+
+.remove {
+    position: absolute;
+    bottom: 6px;
+    right: 4px;
+    padding: 4px 9px;
+    background-color: #F44336;
+    color: #fff;
+    border: 1px solid #f44336;
+    cursor: pointer;
+}
+
+.main {
+    padding: 60px 0;
+    form {
+        max-width: 500px;
+    }
 }

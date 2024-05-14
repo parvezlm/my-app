@@ -1,0 +1,60 @@
+<section class="main">
+    <div class="container">
+         <form [formGroup]="registerForm" (ngSubmit)="submit(registerForm.value)">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text"  class="form-control" formControlName="name" />
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text"  class="form-control" formControlName="email" />
+            </div>
+            <div class="form-group">
+                <label for="">Phone</label>
+                <input type="number"  class="form-control" 
+                placeholder="xxx-xxx-xxxx" 
+                formControlName="phone" />
+            </div>
+            <div formArrayName="address" *ngFor="let controls of getControls(); let i = index">
+                <div [formGroupName]="i">
+                    <div class="form-group">
+                        <h3>Address {{i + 1}}</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Flat No</label>
+                        <input type="text"  
+                        class="form-control" 
+                        formControlName="flatNo" 
+                        [value]="form.controls[i].get('flatNo')?.value | titlecase" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Street Name</label>
+                        <input type="text"  class="form-control" formControlName="streetName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">City</label>
+                        <input type="text"  class="form-control" formControlName="city" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">State</label>
+                        <input type="text"  class="form-control" formControlName="state" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Zipcode</label>
+                        <input type="text"  class="form-control" formControlName="zipcode" />
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="add_more_btn"(click)="removeControls(1)" *ngIf="getControls().length === 2">Remove</button>
+            <button type="button" class="add_more_btn" (click)="addControls()" *ngIf="getControls().length !== 2">Add more</button>
+            <button type="submit" class="btn">Submit</button>
+         </form>
+         <p> {{ '9717470535' | formatPhone }}</p>
+    </div>
+
+    <div class="container">
+        <!-- <p *ngIf="show">this demo text in para</p> -->
+        <ng-template [ngIf]="true">this is demo</ng-template>
+    </div>
+
+</section>
